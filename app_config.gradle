@@ -1,0 +1,33 @@
+// 把公用的阿，可扩展的，加入进来
+// 整个App项目的 配置文件
+// ext 自定义增加我们的内容
+
+ext {
+    usename="Derry"
+
+    // 定义 key value  map
+    app_android = [
+            compileSdkVersion: 29,
+            buildToolsVersion: "29.0.3",
+
+            minSdkVersion: 15,
+            targetSdkVersion: 29,
+            versionCode: 1,
+            versionName:"1.0",
+
+            testInstrumentationRunner:"androidx.test.runner.AndroidJUnitRunner"
+    ]
+
+    // 依赖相关的
+    app_impl = [
+            "appcompat": 'androidx.appcompat:appcompat:1.1.0',
+            "junit": 'junit:junit:4.12',
+            "runner": 'androidx.test:runner:1.2.0',
+            "espresso": 'androidx.test.espresso:espresso-core:3.2.0'
+    ]
+
+    url = [
+            "debug": "http://54353.65465.64.464//",
+            "release": "http://777.65465.64.464//"
+    ]
+}
