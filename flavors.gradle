@@ -1,0 +1,35 @@
+android{
+    flavorDimensions "versionCode"
+    //多渠道打包测试
+    productFlavors {
+        xxx{
+            applicationId = "com.test.xxx"
+            buildConfigField "int","TEST_VALUE","1"
+            buildConfigField "String","TEST_NAME","\"xxx\""
+        }
+        bbb{
+            applicationId = "com.test.bbb"
+            buildConfigField "int","TEST_VALUE","2"
+            buildConfigField "String","TEST_NAME","\"bbb\""
+        }
+        ccc{
+            applicationId = "com.test.ccc"
+            buildConfigField "int","TEST_VALUE","3"
+            buildConfigField "String","TEST_NAME","\"ccc\""
+        }
+    }
+    productFlavors.all{flavor ->
+        ////遍历productFlavors多渠道，设置渠道号（xiaomi 、huawei）
+        flavor.manifestPlaceholders = [CHANNEL_VALUE:name]
+
+    }
+
+    applicationVariants.all{variant ->
+        variant.outputs.all { output ->
+            if (output.outputFile != null && output.outputFile.name.endsWith('.apk')) {
+                def filename = "${variant.flavorName}_v${variant.versionName}_"  + new Date().format("yyyy-MM-dd") + "_" + variant.buildType.name + ".apk"
+                outputFileName = filename
+            }
+        }
+    }
+}

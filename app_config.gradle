@@ -1,0 +1,34 @@
+// 把公用的阿，可扩展的，加入进来
+// 整个App项目的 配置文件
+// ext 自定义增加我们的内容
+
+ext{
+    username = "dd"
+
+    // 定义 key value  map
+    app_android = [
+            compileSdk: 29,
+
+            minSdk: 15,
+            targetSdk: 29,
+            versionCode: 2,
+            versionName:"2.0",
+
+            testInstrumentationRunner:"androidx.test.runner.AndroidJUnitRunner"
+    ]
+
+    app_impl = [
+            "appcompat" :'androidx.appcompat:appcompat:1.2.0',
+            "material" :'com.google.android.material:material:1.3.0',
+            "junit" :'junit:junit:4.+',
+            "junit-ext" :'androidx.test.ext:junit:1.1.2',
+            "espresso-core" :'androidx.test.espresso:espresso-core:3.3.0',
+            "constraintlayout" :'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    ]
+
+    url = [
+            "debug": "http://54353.65465.64.464//",
+            "release": "http://777.65465.64.464//"
+    ]
+}

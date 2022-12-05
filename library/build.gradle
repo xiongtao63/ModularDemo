@@ -1,0 +1,44 @@
+plugins {
+    id 'com.android.library'
+}
+println "libary run ..."
+
+//def app_android = this.getRootProject().ext.app_android
+
+// 定义变量，也可以不定义变量
+android {
+    compileSdk app_android.compileSdk
+
+    defaultConfig {
+        minSdk app_android.minSdk
+        targetSdk app_android.targetSdk
+        versionCode app_android.versionCode
+        versionName app_android.versionName
+
+        testInstrumentationRunner app_android.testInstrumentationRunner
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+dependencies {
+
+//    implementation  app_impl.appcompat
+//    implementation app_impl.material
+//    testImplementation app_impl.junit
+//    androidTestImplementation app_impl["junit-ext"]
+//    androidTestImplementation app_impl["espresso-core"]
+    app_impl.each{
+        k,v -> implementation v
+    }
+}

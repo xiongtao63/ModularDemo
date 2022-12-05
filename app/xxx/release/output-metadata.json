@@ -1,0 +1,20 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.test.xxx",
+  "variantName": "xxxRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 2,
+      "versionName": "2.0",
+      "outputFile": "xxx_v2.0_2022-12-05_release.apk"
+    }
+  ],
+  "elementType": "File"
+}
