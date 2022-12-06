@@ -5,6 +5,10 @@
 ext{
     username = "dd"
 
+
+    // 开发环境 / 生产环境（测试/正式）
+    isRelease = true
+    // 建立Map存储，对象名、key都可以自定义，groovy糖果语法，非常灵活
     // 定义 key value  map
     app_android = [
             compileSdk: 29,
@@ -30,5 +34,11 @@ ext{
     url = [
             "debug": "http://54353.65465.64.464//",
             "release": "http://777.65465.64.464//"
+    ]
+
+    appId = [
+            "app":"com.xiongtao.modulargradledemo",
+            "order":"com.xiongtao.order",
+
     ]
 }

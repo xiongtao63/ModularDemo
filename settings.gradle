@@ -10,3 +10,4 @@ println("setting run")
 rootProject.name = "modularGradleDemo"
 include ':app'
 include ':library'
+include ':order'
